@@ -1,20 +1,26 @@
 'use strict'
 
-let getline = function(data){
-    data = prompt('Введите строку');
+const arr = ['228','136','751','842','490','246','357'];
 
-    while (typeof(data) !== 'string'){
-        data = prompt('Введите строку');
-        console.log(typeof(data));
-        console.log(data);
+let firstcheck = function(data){
+    for (let i=0; i < data.length; i++){
+        let temp = data[i];
+        if ( temp[0] === '2' || temp[0] === '4'){
+            console.log(temp);
+        }
     }
-    console.log(typeof(data));
-    console.log(data);
-    if (data.length > 30){
-        console.log(data.trim().substring(data.length % 30), "...");
-    } else {
-        console.log (data.trim());
-    }
-};
+}
+firstcheck(arr);
 
-getline();
+
+for (let i = 1; i < 100; i++){
+    let temp = 0;
+    for (let j = 0; j <= i; j++){
+        if (Number.isInteger(i/j) === true){
+            temp++;
+        }
+    }
+    if (temp === 2){
+        console.log("", i, "простое число. Его множители:",1, "и", i);
+    }
+}

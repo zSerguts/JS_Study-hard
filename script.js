@@ -1,21 +1,24 @@
-'use strict';
+'use strict'; 
 
-const isNumber = function (n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-};
+let now = new Date();
 
-console.log(isNumber(1));
-let getline = function(data){
-    data = prompt('Введите строку');
 
-    while (typeof(data) !== 'string' || isNumber(data) !== false){
-        data = prompt('Введите строку');
+let week = ["Понедельник", "Втроник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+
+
+
+week.forEach (function (item, index, array) {
+
+    if (index - 6 === now.getDay() )
+    {
+        console.log (item.bold());
     }
-    if (data.length > 30){
-        console.log(data.trim().substr(1, 30), "...");
-    } else {
-        console.log (data.trim());
+    else if (item === "Суббота" || item === "Воскресенье"){
+        console.log (item.italics());
     }
-};
+    else{
+       console.log (item); 
+    }
+    
 
-getline();
+});

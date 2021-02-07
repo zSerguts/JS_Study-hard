@@ -1,21 +1,13 @@
-'use strict';
+let num = 266219;
+let proiz = 1;
 
-const isNumber = function (n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-};
+for (let i = 0; i < 6; i++)
+{
+    proiz *= num % 10;
+    num = Math.floor (num / 10); 
+}
+console.log (proiz);
+proiz *= proiz * proiz;
 
-console.log(isNumber(1));
-let getline = function(data){
-    data = prompt('Введите строку');
-
-    while (typeof(data) !== 'string' || isNumber(data) !== false){
-        data = prompt('Введите строку');
-    }
-    if (data.length > 30){
-        console.log(data.trim().substr(1, 30), "...");
-    } else {
-        console.log (data.trim());
-    }
-};
-
-getline();
+proiz = String(proiz).slice(0,2);
+console.log (proiz);

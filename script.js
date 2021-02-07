@@ -2,23 +2,16 @@
 
 let now = new Date();
 
-
-let week = ["Понедельник", "Втроник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
-
-
+let week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
 
 week.forEach (function (item, index, array) {
-
-    if (index - 6 === now.getDay() )
-    {
-        console.log (item.bold());
+    if (index  === now.getDay() - 1 ){
+        document.write(item.bold());
     }
     else if (item === "Суббота" || item === "Воскресенье"){
-        console.log (item.italics());
+        document.write("<br \/>" + item.italics());
     }
     else{
-       console.log (item); 
+        document.write("<br \/>" + item); 
     }
-    
-
 });

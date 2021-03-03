@@ -6,7 +6,7 @@ let week = ["Понедельник", "Вторник", "Среда", "Четв�
 
 week.forEach (function (item, index, array) {
     if (index  === now.getDay() - 1 ){
-        document.write(item.bold());
+        document.write("<br \/>" + item.bold());
     }
     else if (item === "Суббота" || item === "Воскресенье"){
         document.write("<br \/>" + item.italics());
